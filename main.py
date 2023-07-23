@@ -8,10 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 import scrapper
 
 # Set the path to your ChromeDriver executable. Download it from https://sites.google.com/a/chromium.org/chromedriver/downloads
-chromedriver_path = '/Users/macbookpro/Downloads/chromedriver_mac64/chromedriver'
 
-# Create a new instance of Chrome WebDriver
-driver = webdriver.Chrome()
 
 # import get_store_ids function from scrapper.py
 from scrapper import get_store_ids
@@ -21,6 +18,10 @@ matches = get_store_ids()
 
 # create a function for all below code
 def fill_form(store_id):
+    chromedriver_path = '/Users/macbookpro/Downloads/chromedriver_mac64/chromedriver'
+
+# Create a new instance of Chrome WebDriver
+    driver = webdriver.Chrome()
     url = 'https://www.dollarama.com/en-CA/corp/careers/store-position-application-form?position=SA&storeid='+store_id  # Replace with the URL of the webpage you want to fill data on
 
     driver.get(url)
@@ -29,15 +30,15 @@ def fill_form(store_id):
     time.sleep(2)
 
     input_element = driver.find_element("name","firstname")
-    text_to_fill = "Zagham"  # Replace "John" with the desired first name
+    text_to_fill = "Zara"  # Replace "John" with the desired first name
     input_element.send_keys(text_to_fill)
 
     input_element = driver.find_element("name","lastname")
-    text_to_fill = "Arshad"  # Replace "Doe" with the desired last name
+    text_to_fill = "Shahid"  # Replace "Doe" with the desired last name
     input_element.send_keys(text_to_fill)
 
     input_element = driver.find_element("name","email")
-    text_to_fill = "zaghamarshad@yahoo.com"
+    text_to_fill = "zarashahid149@gmail.com"
     input_element.send_keys(text_to_fill)
 
     input_element = driver.find_element("name","phone")
@@ -82,7 +83,7 @@ def fill_form(store_id):
         available_work_to_mon.select_by_value(to_value)
 
 
-    file_path = '/Users/macbookpro/Documents/General/Zagham_Arshad_Resume.pdf'
+    file_path = '/Users/macbookpro/Documents/General/Zara_Shahid_Resume.pdf'
 
 
 # form_input = driver.find_element(By.CLASS_NAME, 'btn.btn-default').click()
